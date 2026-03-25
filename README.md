@@ -55,6 +55,37 @@ pip install -r requirements.txt
 
 ---
 
+## Web Interface
+
+A browser-based UI is available via the bundled Flask application:
+
+```bash
+python app.py
+# Then open http://localhost:5000 in your browser.
+```
+
+The web interface provides the same functionality as the CLI but in a
+point-and-click form:
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| League Name | `Settlers` | PoE league name (must match exactly). |
+| POESESSID | `$POE_SESSION_ID` | Your session cookie (see below). |
+| Max Listings | `100` | Maximum number of trade listings to fetch (1–500). |
+| Include Void maps | off | Show Void maps alongside regular maps. |
+
+You can also pre-populate the session-ID field by setting the
+`POE_SESSION_ID` environment variable before starting the server.
+
+To expose the server on all network interfaces (e.g. for access from
+another machine), set `HOST=0.0.0.0`:
+
+```bash
+HOST=0.0.0.0 python app.py
+```
+
+---
+
 ## Obtaining a POESESSID
 
 The PoE Official Trade API requires an authenticated session cookie.
